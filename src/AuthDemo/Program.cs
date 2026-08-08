@@ -1,4 +1,5 @@
 using AuthDemo.Data;
+using AuthDemo.Services.Auth;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -23,6 +24,11 @@ builder.Services.AddDbContext<ApplicationDBContext>(options =>
         builder.Configuration.GetConnectionString("DefaultConnection")
     );
 });
+
+
+//Services/Interfaces
+
+builder.Services.AddScoped<IAuthInterface, AuthService>();
 
 var app = builder.Build();
 
