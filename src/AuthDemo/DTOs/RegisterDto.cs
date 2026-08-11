@@ -6,6 +6,7 @@ public class RegisterDto
     public string NomeCompleto { get; set; } = string.Empty;
     public string Usuario { get; set; } = string.Empty;
     public string Matricula { get; set; } = string.Empty;
+    public string Senha { get; set; } =string.Empty;
     public List<string> Roles { get; set; } = new();
 
 }
