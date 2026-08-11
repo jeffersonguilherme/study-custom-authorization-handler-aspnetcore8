@@ -1,4 +1,5 @@
-using Responses;
+using AuthDemo.DTOs;
+using AuthDemo.Responses;
 
 namespace AuthDemo.Services.Auth;
 

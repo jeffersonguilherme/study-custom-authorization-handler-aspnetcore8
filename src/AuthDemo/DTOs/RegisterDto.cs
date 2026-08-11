@@ -1,4 +1,4 @@
-namespace DTOs;
+namespace AuthDemo.DTOs;
 
 public class RegisterDto
 {

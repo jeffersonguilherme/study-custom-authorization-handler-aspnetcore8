@@ -1,4 +1,4 @@
-namespace Responses;
+namespace AuthDemo.Responses;
 
 public class PagedResponse<T>
 {
