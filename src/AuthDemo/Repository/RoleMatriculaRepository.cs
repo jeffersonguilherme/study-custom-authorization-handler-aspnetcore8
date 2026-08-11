@@ -1,12 +1,24 @@
+using AuthDemo.Data;
 using AuthDemo.Interfaces;
-using AuthDemo.Responses;
+
+using Microsoft.EntityFrameworkCore;
 
 namespace AuthDemo.Repository;
 
 public class RoleMatriculaRepository : IRoleMatriculaRepository
 {
-    public Task<ResponseModel<string>> GetRoleAsync(string matricula)
+    private readonly ApplicationDBContext _context;
+public RoleMatriculaRepository(ApplicationDBContext context)
     {
-        throw new NotImplementedException();
+        _context = context;
+    }
+
+    public async Task<string> GetRoleAsync(string matricula)
+    {
+        var role = await _context.MatriculaRoles.FirstOrDefaultAsync(mat => mat.Matricula == matricula);
+        if(role is null)
+         throw  new ArgumentException("Matricula não cadastrada");
+
+        return role.Role;
     }
 }
